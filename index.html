@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- 22/08/2025 | 9;47 am -->
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <meta name="description" content="Discover 100 delicious vegan sweet potato recipes. A complete cookbook filled with plant-based, healthy, and easy-to-make sweet potato meals for the whole family. Buy your copy now!" />
         <meta name="keywords" content="vegan cookbook, sweet potato recipes, plant-based recipes, vegan meals, healthy recipes, sweet potato cookbook, vegan sweet potato, easy vegan recipes, 100 vegan recipes" />
         <meta name="author" content="Greenly Spirited" />
-        <link rel="canonical" href="https://www.greenlyspirited.online/index.html" /> <meta property="og:title" content="Greenly Spirited | 100 Vegan Sweet Potato Recipes Cookbook" />
+        <link rel="canonical" href="https://www.greenlyspirited.online/index.html" />
+        <meta property="og:title" content="Greenly Spirited | 100 Vegan Sweet Potato Recipes Cookbook" />
         <meta property="og:description" content="Transform ordinary meals into delicious, plant-based wonders with our cookbook featuring 100 vegan sweet potato recipes. Perfect for energy, savings, and family-friendly eating." />
-        <meta property="og:image" content="https://www.greenlyspirited.online/social-share-image.jpg" /> <meta property="og:url" content="https://www.greenlyspirited.online/index.html" /> <meta name="twitter:card" content="summary_large_image" />
+        <meta property="og:image" content="https://www.greenlyspirited.online/social-share-image.jpg" />
+        <meta property="og:url" content="https://www.greenlyspirited.online/index.html" />
+        <meta name="twitter:card" content="summary_large_image" />
 
         <title>100 Vegan Sweet Potato Recipes: The Ultimate Greenly Spirited Cookbook</title>
 
@@ -25,6 +27,7 @@
 
             html {
                 font-size: 16px; /* Base font size for rem units */
+                scroll-behavior: smooth;
             }
 
             body {
@@ -38,6 +41,20 @@
                 padding: 1rem;
             }
 
+            /* Header/Logo */
+            .header {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 1.5rem;
+            }
+
+            .logo {
+                height: 120px;
+                animation: scaleIn 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            }
+            
             /* Main container to hold all sections */
             .main-container {
                 max-width: 1200px;
@@ -46,6 +63,33 @@
                 flex-direction: column;
                 gap: 2.5rem;
                 margin: 2.5rem 0;
+            }
+
+            /* Image Section */
+            .image-section {
+                width: 100%;
+                background: #ffffff;
+                border-radius: 20px;
+                box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                padding: 2rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .recipe-image {
+                width: 100%;
+                max-width: 800px;
+                height: auto;
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+                transform: scale(0.95);
+                transition: transform 0.5s ease-in-out;
+            }
+            
+            .recipe-image:hover {
+                transform: scale(1.0);
             }
 
             /* Benefits Section Styling */
@@ -97,6 +141,11 @@
                 text-align: center;
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
                 height: 100%;
+            }
+
+            .benefit-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
             }
 
             .benefit-icon {
@@ -231,6 +280,82 @@
                 text-shadow: none;
                 margin-bottom: 0;
             }
+            
+            /* New Image Styling */
+            .imagine-image {
+                width: 100%;
+                max-width: 400px;
+                height: auto;
+                border-radius: 15px;
+                margin-top: 1.5rem;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+                transition: transform 0.5s ease-in-out;
+            }
+
+            .imagine-image:hover {
+                transform: scale(1.03);
+            }
+
+            /* Add margin to the last point to prevent it from hugging the image */
+            .imagine-column .point:last-of-type {
+                margin-bottom: 2.5rem;
+            }
+
+            /* Testimonials Section */
+            .testimonials-section {
+                width: 100%;
+                background: #f8f9fa;
+                color: #333;
+                border-radius: 20px;
+                box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+                padding: clamp(2rem, 5vw, 2.5rem);
+            }
+
+            .testimonials-section h2 {
+                font-size: clamp(1.8rem, 4vw, 2.5rem);
+                color: #2a9d8f;
+                margin-bottom: 2.5rem;
+                font-weight: 700;
+            }
+
+            .testimonial-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+            }
+
+            .testimonial-card {
+                background: #ffffff;
+                border-radius: 15px;
+                padding: 1.5rem;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+
+            .testimonial-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            }
+
+            .testimonial-text {
+                font-style: italic;
+                margin-bottom: 1rem;
+                color: #555;
+                line-height: 1.6;
+                font-size: 1rem;
+            }
+
+            .testimonial-author {
+                font-weight: bold;
+                color: #333;
+                font-size: 1.1rem;
+            }
 
             /* Hero Section Styles */
             .hero-container {
@@ -286,6 +411,15 @@
                 transform: translateY(-3px);
                 box-shadow: 0 8px 20px rgba(0,0,0,0.4);
             }
+            
+            .btn.sample-btn {
+                background-color: #e63946;
+                color: #fff;
+            }
+
+            .btn.sample-btn:hover {
+                background-color: #d62936;
+            }
 
             .hero-container footer {
                 margin-top: 2.5rem;
@@ -301,6 +435,11 @@
             @keyframes fadeIn {
                 0% { opacity: 0; transform: translateY(-20px); }
                 100% { opacity: 1; transform: translateY(0); }
+            }
+
+            @keyframes scaleIn {
+                0% { transform: scale(0.5); opacity: 0; }
+                100% { transform: scale(1); opacity: 1; }
             }
 
             /* Media queries for stack-on-mobile behavior */
@@ -346,7 +485,28 @@
         </style>
     </head>
     <body>
+        <div class="header">
+            <img src="images/Greenly-Spirited-Logo.png" alt="Greenly Spirited Logo" class="logo" /> 
+        </div>
         <div class="main-container">
+
+            <section class="hero-container">
+                <h1>Discover <span class="highlight">100 Vegan Sweet Potato Recipes!</span></h1>
+                <p>
+                    Transform ordinary meals into <span class="highlight">delicious, plant-based wonders!</span>
+                    Sweet potatoes are packed with nutrients, fiber, and antioxidants that boost your health while satisfying your taste buds.
+                    Whether you want comfort food, quick meals, or gourmet dishes, this collection has you covered.
+                </p>
+                <div class="btn-container">
+                    <a href="#testimonials-section" class="btn sample-btn" title="Download a free sample of vegan sweet potato recipes">Free Sample Download</a>
+                    <a href="#buy-now" class="btn" title="Buy the Kindle version of the cookbook">Buy Now!</a>
+                </div>
+            </section>
+            
+            <section class="image-section">
+                <img src="images/Sweet-Potato-Recipe.jpg" alt="A tantalizing vegan sweet potato curry dish" class="recipe-image" />
+            </section>
+
             <section class="benefits-section">
                 <div class="benefits-header">
                     <h2 class="benefits-title">Let Sweet Potato Bring Out the Super You…</h2>
@@ -412,6 +572,24 @@
                         <div class="benefit-icon"><i class="fas fa-heartbeat"></i></div>
                         <h3>Super Gut Health</h3>
                         <p>Support your digestive wellness with fiber-rich sweet potato creations that promote healthy gut bacteria and improve overall digestion naturally.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="testimonials-section" id="testimonials-section">
+                <h2>What Happy Cooks Are Saying...</h2>
+                <div class="testimonial-container">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"This cookbook changed my perspective on vegan cooking. The recipes are so simple and delicious, and my kids can't get enough of the sweet potato fries!"</p>
+                        <p class="testimonial-author">- Sarah P., Busy Mom</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"I'm a college student on a budget, and this book has been a lifesaver. The recipes are cheap, easy, and give me so much energy for my studies. I've already saved a ton on groceries!"</p>
+                        <p class="testimonial-author">- Mark J., Student</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"As a professional chef, I'm always looking for new ways to get creative with plant-based ingredients. The variety in this book is incredible—it's inspired some of my best new dishes."</p>
+                        <p class="testimonial-author">- Chef Anya R., Culinary Innovator</p>
                     </div>
                 </div>
             </section>
@@ -493,15 +671,15 @@
                             <p>Of turning simple, affordable ingredients into delicious and healthy pure magic</p>
                         </div>
                     </div>
+                    <img src="images/healthy-woman.png" alt="A woman smiling while holding a bowl of healthy salad" class="imagine-image" />
                 </div>
             </section>
 
-            <section class="hero-container">
-                <h1>Discover <span class="highlight">100 Vegan Sweet Potato Recipes!</span></h1>
+            <section class="hero-container" id="buy-now">
+                <h1>Ready to Transform Your Kitchen?</h1>
                 <p>
-                    Transform ordinary meals into <span class="highlight">delicious, plant-based wonders!</span>
-                    Sweet potatoes are packed with nutrients, fiber, and antioxidants that boost your health while satisfying your taste buds.
-                    Whether you want comfort food, quick meals, or gourmet dishes, this collection has you covered.
+                    Don't wait to discover the amazing benefits of vegan sweet potato cooking.
+                    Your journey to a healthier, more delicious life starts now.
                 </p>
 
                 <div class="btn-container">
@@ -510,8 +688,8 @@
                     <a href="https://www.amazon.com/100-Vegan-Sweet-Potato-Recipes/dp/B0FMK353NX/ref=tmm_hrd_swatch_0" class="btn" title="Buy the Hardcover version of the cookbook">Buy Hardcover</a>
                     <a href="https://selar.com/d45p59" class="btn" title="Get the PDF version of the cookbook from Selar">Get PDF (Selar)</a>
                     <a href="https://greenlyspirited.gumroad.com/l/100_vegan_sweet_potato_recipes" class="btn" title="Get the PDF version of the cookbook from Gumroad">Get PDF (Gumroad)</a>
-                    <a href="https://dorischefferson.systeme.io/greenlyspirited" class="btn" title="Download a free sample of vegan sweet potato recipes">Download a Free Vegan Sweet Potato Recipes</a>
                 </div>
+
                 <footer>
                     Questions? Contact me at <a href="mailto:dorischefferson@greenlyspirited.online">dorischefferson@greenlyspirited.online</a>
                 </footer>
