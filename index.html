@@ -65,14 +65,14 @@
             margin: 2.5rem 0;
         }
 
-        /* Image Section */
+        /* Image Section (Recipe Image) */
         .image-section {
             width: 100%;
-            background: #004aad; /* Blend with blue background */
+            background: #004aad; /* Blue background to match body */
             border-radius: 20px;
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            box-shadow: none; /* No shadow to blend seamlessly */
             overflow: hidden;
-            padding: 5rem 2rem; /* Add padding for better blending */
+            padding: 5rem 2rem;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -83,7 +83,7 @@
             max-width: 800px;
             height: auto;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: none; /* No shadow on the image itself */
             transform: scale(0.95);
             transition: transform 0.5s ease-in-out;
         }
@@ -177,9 +177,8 @@
             justify-content: center;
             align-items: flex-start;
             width: 100%;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            background: #004aad;
+            box-shadow: none;
             overflow: hidden;
             padding: 1rem;
             gap: 1rem;
@@ -189,18 +188,23 @@
             display: flex;
             flex-direction: column;
             flex: 1;
-            color: #333;
             padding: clamp(1.5rem, 5vw, 2.5rem);
         }
-
+        
+        /* Adjusted struggles-column padding for consistency */
         .struggles-column {
             background: #f8f9fa;
             border-radius: 15px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            color: #333;
+            padding-bottom: 75px;
         }
 
         .imagine-column {
-            background: #ffffff; /* Match section background */
+            background: #ffffff; /* White background for this section */
             border-radius: 15px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            color: #333;
         }
 
         .column-title {
@@ -280,20 +284,31 @@
             text-shadow: none;
             margin-bottom: 0;
         }
+        
+        /* New section for the woman's image */
+        .woman-image-section {
+            width: 100%;
+            background: white; /* Match the background of the imagine-column */
+            padding: 2.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+        }
 
-        /* New Image Styling */
-        .imagine-image {
+        /* New Image Styling (Woman's image) */
+        .woman-image {
             width: 100%;
             max-width: 400px;
             height: auto;
             border-radius: 15px;
-            margin: 1.5rem auto 0; /* Center the image */
-            display: block; /* Ensure margin auto works correctly */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            display: block;
+            box-shadow: none; /* No shadow on the image itself to blend with white background */
             transition: transform 0.5s ease-in-out;
         }
 
-        .imagine-image:hover {
+        .woman-image:hover {
             transform: scale(1.03);
         }
 
@@ -426,11 +441,34 @@
             margin-top: 2.5rem;
             font-size: 0.9rem;
             color: #eee;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
         }
 
-        .hero-container a {
+        .hero-container footer a {
             color: #ffcd34;
             text-decoration: underline;
+        }
+        
+        /* Social Media Section */
+        .social-media-container {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .social-media-container a {
+            color: #fff;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+            text-decoration: none; /* remove the underline */
+        }
+        
+        .social-media-container a:hover {
+            color: #ffd700;
         }
 
         @keyframes fadeIn {
@@ -473,7 +511,7 @@
                 font-size: clamp(0.9rem, 2.5vw, 1.2rem);
             }
             .image-section {
-                padding: 3rem 1rem; /* Adjust padding for mobile */
+                padding: 2rem 0.5rem;
             }
         }
 
@@ -486,7 +524,7 @@
                 width: 100%;
             }
             .image-section {
-                padding: 2rem 0.5rem; /* Further adjust padding for smaller screens */
+                padding: 2rem 0.5rem;
             }
         }
     </style>
@@ -505,7 +543,7 @@
                 Whether you want comfort food, quick meals, or gourmet dishes, this collection has you covered.
             </p>
             <div class="btn-container">
-                <a href="#testimonials-section" class="btn sample-btn" title="Download a free sample of vegan sweet potato recipes">Free Sample Download</a>
+                <a href="https://dorischefferson.systeme.io/greenlyspirited" class="btn sample-btn" title="Download a free sample of vegan sweet potato recipes">Free Sample Download</a>
                 <a href="#buy-now" class="btn" title="Buy the Kindle version of the cookbook">Buy Now!</a>
             </div>
         </section>
@@ -660,8 +698,11 @@
                         <p>Of turning simple, affordable ingredients into delicious and healthy pure magic</p>
                     </div>
                 </div>
-                <img src="images/healthy-woman.png" alt="A woman smiling while holding a bowl of healthy salad" class="imagine-image" />
             </div>
+        </section>
+        
+        <section class="woman-image-section">
+            <img src="images/healthy-woman.png" alt="A woman smiling while holding a bowl of healthy salad" class="woman-image" />
         </section>
 
         <section class="hero-container" id="buy-now">
@@ -672,15 +713,22 @@
             </p>
 
             <div class="btn-container">
-                <a href="https://www.amazon.com/dp/B0FKBXVKGH" class="btn" title="Buy the Kindle version of the cookbook">Buy Kindle Version</a>
-                <a href="https://www.amazon.com/100-Vegan-Sweet-Potato-Recipes/dp/B0FMFQTW5W/ref=tmm_pap_swatch_0" class="btn" title="Buy the Paperback version of the cookbook">Buy Paperback</a>
-                <a href="https://www.amazon.com/100-Vegan-Sweet-Potato-Recipes/dp/B0FMK353NX/ref=tmm_hrd_swatch_0" class="btn" title="Buy the Hardcover version of the cookbook">Buy Hardcover</a>
-                <a href="https://selar.com/d45p59" class="btn" title="Get the PDF version of the cookbook from Selar">Get PDF (Selar)</a>
-                <a href="https://greenlyspirited.gumroad.com/l/100_vegan_sweet_potato_recipes" class="btn" title="Get the PDF version of the cookbook from Gumroad">Get PDF (Gumroad)</a>
+                <a href="https://www.amazon.com/dp/B0FKBXVKGH" target="_blank" class="btn" title="Buy the Kindle version of the cookbook">Buy Kindle Version</a>
+                <a href="https://www.amazon.com/100-Vegan-Sweet-Potato-Recipes/dp/B0FMFQTW5W/ref=tmm_pap_swatch_0" target="_blank" class="btn" title="Buy the Paperback version of the cookbook">Buy Paperback</a>
+                <a href="https://www.amazon.com/100-Vegan-Sweet-Potato-Recipes/dp/B0FMK353NX/ref=tmm_hrd_swatch_0" target="_blank" class="btn" title="Buy the Hardcover version of the cookbook">Buy Hardcover</a>
+                <a href="https://selar.com/d45p59" target="_blank" class="btn" title="Get the PDF version of the cookbook from Selar">Get PDF (Selar)</a>
+                <a href="https://greenlyspirited.gumroad.com/l/100_vegan_sweet_potato_recipes" target="_blank" class="btn" title="Get the PDF version of the cookbook from Gumroad">Get PDF (Gumroad)</a>
             </div>
 
             <footer>
-                Questions? Contact me at <a href="mailto:dorischefferson@greenlyspirited.online">dorischefferson@greenlyspirited.online</a>
+                <p>Questions? Contact me at <a href="mailto:dorischefferson@greenlyspirited.online">dorischefferson@greenlyspirited.online</a></p>
+                <div class="social-media-container">
+                    <a href="https://www.facebook.com/your-profile" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/your-profile" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.pinterest.com/your-profile" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="https://twitter.com/your-profile" target="_blank" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.tiktok.com/@your-profile" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
             </footer>
         </section>
     </div>
